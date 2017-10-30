@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<title>Faculty</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<?php
+include('session.php');
+ ?>
+<style>
+body,html{height: 100%}
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+body{
+  /*background-image: url("c/images/14.jpg");*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.zzz:hover {
+    background-color: purple;
+}
+.container {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: 0.5s ease;
+}
+
+.container:hover .overlay {
+  width: 100%;
+  left: 0;
+}
+
+.text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+</style>
+<body class="w3-light-grey" >
+<!--navigation bar-->
+  <ul>
+    <li style="font-size:20px" ><a class="active" href="welcomefaculty.php"><i class="fa fa-fort-awesome"></i>Attendence Manager</a></li>
+    <li style="float:right;font-size:18px" class="zzz">
+      <div class="container">
+      <a><?php echo $login_sessionf," ",$login_sessionl ?> <i class="fa fa-caret-down"></i></a>
+        <div class="overlay">
+          <div class="text"><a href = "logout.php">Sign Out</a></div>
+        </div>
+      </div>
+    </li>
+  </ul>
+<!--<div style="margin-left:14%;margin-top:20px;">
+<h5>Welcome, <strong><?php echo $login_sessionf?></strong></h5>
+</div>-->
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:180px;margin-right:180px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter w3-button">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-check-square-o w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><!--No. of things pending--></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4 style="text-align:left">Take Attendance</h4>
+      </div>
+    </div>
+    <div class="w3-quarter  w3-button">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><!--No. of things pending--></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4 style="text-align:left">View Attendence</h4>
+      </div>
+    </div>
+    <div class="w3-quarter  w3-button">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-comments-o w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><!--No. of things pending--></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4 style="text-align:left">Messages</h4>
+      </div>
+    </div>
+    <div class="w3-quarter  w3-button">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-plus w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><!--No. of things pending--></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4 style="text-align:left">Add Course</h4>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
