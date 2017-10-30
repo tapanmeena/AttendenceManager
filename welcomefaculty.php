@@ -116,7 +116,7 @@ li a {
       </div>
     </div>
     <div class="w3-quarter  w3-button">
-      <div class="w3-container w3-teal w3-padding-16">
+      <div class="w3-container w3-green w3-padding-16">
         <div class="w3-left"><i class="fa fa-comments-o w3-xxxlarge"></i></div>
         <div class="w3-right">
           <h3><!--No. of things pending--></h3>
@@ -137,5 +137,9 @@ li a {
     </div>
   </div>
 
+<div style="margin-top:6%" class="courseteach ">
+<p style="font-size:25px;color:brown" ><strong>>Course Teaching</strong></p>
+sada
+</div>
 </body>
 </html>
