@@ -1,3 +1,4 @@
+
 <?php
 include("config.php");
    session_start();
@@ -5,9 +6,9 @@ include("config.php");
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
 
-      $myusername = mysqli_real_escape_string($db,$_POST['facultyloginid']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['facultyloginpassword']);
-      $sql = "SELECT ID FROM db_faculty WHERE username = '$myusername' and password = '$mypassword'";
+      $myusername = mysqli_real_escape_string($db,$_POST['rollnologin']);
+      $mypassword = mysqli_real_escape_string($db,$_POST['studentloginpassword']);
+      $sql = "SELECT ID FROM db_student WHERE username = '$myusername' and password = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
@@ -20,9 +21,10 @@ include("config.php");
          #session_register("myusername");
 
          $_SESSION['login_user'] = $myusername;
-         header("location:welcomefaculty.php");
+         header("location:welcomestudent.php");
       }else {
          echo "Your Login Name or Password is invalid";
       }
    }
  ?>
+

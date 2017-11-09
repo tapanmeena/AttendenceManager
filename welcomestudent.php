@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html>
-<title>Faculty Portal</title>
+<title>Student Portal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <?php
-include('sessionfaculty.php');
-session_start();
+include('sessionstudent.php');
  ?>
 <style>
 body,html{height: 100%}
@@ -74,7 +71,7 @@ li a {
 <body class="w3-light-grey" >
 <!--navigation bar-->
   <ul>
-    <li style="font-size:20px" ><a class="active" href="welcomefaculty.php"><i class="fa fa-fort-awesome" style="font-size:25px"></i>Attendence Manager</a></li>
+    <li style="font-size:20px" ><a class="active" href="welcomestudent.php"><i class="fa fa-fort-awesome"></i>Attendence Manager</a></li>
     <li style="float:right;font-size:18px" class="zzz">
       <div class="container">
       <a><?php echo $login_sessionf," ",$login_sessionl ?> <i class="fa fa-caret-down"></i></a>
@@ -94,7 +91,7 @@ li a {
   <header class="w3-container" style="padding-top:22px">
     <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
   </header>
-<a href="takeattendence.php" style="text-decoration:none;">
+
   <div class="w3-row-padding w3-margin-bottom">
     <div class="w3-quarter w3-button">
       <div class="w3-container w3-red w3-padding-16">
@@ -103,11 +100,9 @@ li a {
           <h3><!--No. of things pending--></h3>
         </div>
         <div class="w3-clear"></div>
-        <h4 style="text-align:left">Take Attendance</h4>
+        <h4 style="text-align:left">View Attendance</h4>
       </div>
     </div>
-  </a>
-  <a href="viewattendencefaculty.php" style="text-decoration:none;">
     <div class="w3-quarter  w3-button">
       <div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
@@ -115,11 +110,9 @@ li a {
           <h3><!--No. of things pending--></h3>
         </div>
         <div class="w3-clear"></div>
-        <h4 style="text-align:left">View Attendence</h4>
+        <h4 style="text-align:left">Time Table</h4>
       </div>
     </div>
-  </a>
-  <a href="message.php" style="text-decoration:none;">
     <div class="w3-quarter  w3-button">
       <div class="w3-container w3-green w3-padding-16">
         <div class="w3-left"><i class="fa fa-comments-o w3-xxxlarge"></i></div>
@@ -127,27 +120,28 @@ li a {
           <h3><!--No. of things pending--></h3>
         </div>
         <div class="w3-clear"></div>
-        <h4 style="text-align:left">Messages</h4>
+        <h4 style="text-align:left">Need a Break</h4>
       </div>
     </div>
-  </a>
-<a href="addcourse.php" style="text-decoration:none;">
-  <div class="w3-quarter  w3-button">
+    <div class="w3-quarter  w3-button">
       <div class="w3-container w3-orange w3-text-white w3-padding-16">
         <div class="w3-left"><i class="fa fa-plus w3-xxxlarge"></i></div>
         <div class="w3-right">
           <h3><!--No. of things pending--></h3>
         </div>
         <div class="w3-clear"></div>
-        <h4 style="text-align:left">Add Course</h4>
+        <h4 style="text-align:left">Predictor</h4>
       </div>
     </div>
-  </a>
   </div>
 
-<div style="margin-top:6%" class="courseteach ">
-<p style="font-size:25px;color:brown" ><strong>>Course Teaching</strong></p>
-sada
+<div style="margin-top:6%;margin-left:2%" class="courseteach ">
+  <p style="font-size:25px;color:brown" ><strong>>Course Attending</strong></p>
+  <div style="margin-left:5%">
+    <?php
+      
+    ?>
+  </div>
 </div>
 </body>
 </html>

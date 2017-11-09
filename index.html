@@ -2,7 +2,7 @@
 <html>
 <!--<head>
   <link rel="icon" href="http://www.synowbtech.com/images/logo/logos-146a.jpg">-->
-<title>Attendence Manager</title>
+<title>Attendance Manager</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -168,7 +168,7 @@ color: green;
     float: left;
     width: 100%;
     padding: 10px 50px;
-    height: 450px; /* Should be removed. Only for demonstration */
+    height: 390px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -193,7 +193,7 @@ color: green;
 <div class="w3-top w3-hide-small">
   <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
     <a href="index.html" class="w3-bar-item w3-button w3-hover-blue">HOME</a>
-    <a href="#timetable" class="w3-bar-item w3-button w3-hover-red">Time Table</a>
+    <a href="courseoffered.html" class="w3-bar-item w3-button w3-hover-red">Course Offered</a>
     <a href="about.html" class="w3-bar-item w3-button w3-hover-purple">ABOUT</a>
     <a href="#googleMap" class="w3-bar-item w3-button w3-hover-blue">CONTACT</a>
 
@@ -211,8 +211,8 @@ color: green;
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-middle w3-center">
-    <span class="w3-text-white w3-hide-small" style="font-size:100px">Attendence<br>Manager</span>
-    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>Attendence<br>Manager</b></span>
+    <span class="w3-text-white w3-hide-small" style="font-size:100px">Attendance<br>Manager</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>Attendance<br>Manager</b></span>
 <br>
   <button class="w3-button w3-black w3-xxlarge w3-hover-red" onclick="document.getElementById('id01').style.display='block'" style="width:auto" id="facultylogin">Faculty LogIn</button>
   <button class="w3-button w3-black w3-xxlarge w3-hover-purple" onclick="document.getElementById('id02').style.display='block'" style="width:auto" id="studentlogin">Student LogIn</button>
@@ -231,7 +231,7 @@ color: green;
         <input type="password" placeholder="Enter Password" name="facultyloginpassword" required>
 
         <button type="submit">Login</button>
-        <input type="checkbox" checked="checked"> Remember me
+        <input type="checkbox" checked> Remember me
       </div>
 
       <div class="container" style="background-color:#f1f1f1">
@@ -241,7 +241,6 @@ color: green;
   </div>
 
   <div id="id02" class="modal">
-
     <form class="modal-content animate" id="modalform"  method="POST" action="authenticatestudent.php">
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none" class="close" title="Close Modal">&times;</span>
@@ -262,10 +261,10 @@ color: green;
     </form>
   </div>
 
-  <!--SIGNUP-->
-  <div id="id03" class="modal" method="POST" action="createfaculty.php">
+  <!--SIGNUP Faculty-->
+  <div id="id03" class="modal">
 
-    <form class="modal-content3 animate" id="modalform">
+    <form class="modal-content3 animate" id="modalform"   method="post" action="signupfaculty.php">
       <div class="imgcontainer">
         <span onclick="document.getElementById('id03').style.display='none" class="close" title="Close Modal">&times;</span>
       </div>
@@ -280,10 +279,10 @@ color: green;
     <br>
       <input type="text" placeholder="First Name" name="facultyfirstname" required>
       <input type="text" placeholder="Last Name" name="facultylastname" required>
-      <input type="text" placeholder="Email-Id" name="facultysignupid" equired>
+      <input type="text" placeholder="Email-Id" name="facultysignupid" required>
       <input type="text" placeholder="Password" name="facultysignuppassword" required>
       <input type="text" placeholder="Course Teaching" name="courseteaching" required>
-      <button type="submit" class="sbutton">Submit</button>
+      <button type="submit" class="fbutton" name="fbutton" onclick="ssub()">Submit</button>
 
   </div>
 </div>
@@ -291,9 +290,9 @@ color: green;
 
 </form>
 </div>
-
+<!--  signup Student -->
 <div id="id04" class="modal">
-  <form class="modal-content3 animate" id="modalform" method="POST" action="createstudent.php">
+  <form class="modal-content3 animate" id="modalform" method="post" action="signupstudent.php">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id04').style.display='none" class="close" title="Close Modal">&times;</span>
     </div>
@@ -305,12 +304,35 @@ color: green;
   <div class="column" style="background-color:#aaa">
 <div class="fclt" style="text-align:center">Student</div>
     <input type="text" placeholder="First Name" name="studentfirstname" required>
-    <input type="text"   placeholder="Last Name" name="studentlastname" required>
+    <input type="text" placeholder="Last Name" name="studentlastname" required>
     <input type="text" placeholder="Roll Number" name="rollnosignup" required>
     <input type="text" placeholder="Password" name="studentsignuppassword" required>
-    <input type="text" placeholder="Department" name="department" required>
-    <input type="text" placeholder="Semester" name="semester" required>
-        <button type="submit">Submit</button>
+    <!--<input type="text" placeholder="Department" name="department" required>-->
+    <div class="form-group">
+    <!--  <label for="semester">Department</label>-->
+     <select  class="form-control" required id="department" name="department">
+     <option>Department</option>
+     <option >Computer Science</option>
+     <option >Electrical</option>
+     <option >Mechanical</option>
+     </select>
+<!--     <label for="semester">Semester </label>-->
+    <select class="form-control" required id="semester" name="semester">
+    <option>Semester</option>
+    <option >1st</option>
+    <option >2nd</option>
+    <option >3rd</option>
+    <option >4th</option>
+    <option >5th</option>
+    <option >6th</option>
+    <option >7th</option>
+    <option >8th</option>
+    </select>
+   </div>
+
+</div>
+    <!--<input type="text" placeholder="Semester" name="Semester" required>-->
+        <button type="submit" name="sbutton" onclick="ssub()">Submit</button>
 </div>
   </div>
 </div>
@@ -332,6 +354,11 @@ color: green;
 //myfunc(){
 
 //}
+function ssub(){
+  alert("SignUp Successful....")
+}
+
+
 
 var modal = document.getElementById('id01');
 var modal1 = document.getElementById('id02');
