@@ -6,7 +6,7 @@ presents and total classes he/she attended
 
 <html>
 <link rel="icon" href="images/icon1.png" type="image/icon" />
-<title>Take Attendence</title>
+<title>View Attendence</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -16,7 +16,7 @@ presents and total classes he/she attended
 
 <?php
 #include('config.php')
-include('sessionfaculty.php');
+include('sessionstudent.php');
 ?>
 <style>
 table{
@@ -87,7 +87,7 @@ li a {
 
 <!--For making table for attendence-->
 <ul>
-  <li style="font-size:20px" ><a class="active" href="welcomefaculty.php"><i class="fa fa-fort-awesome" style="font-size:25px"></i>Attendence Manager</a></li>
+  <li style="font-size:20px" ><a class="active" href="welcomestudent.php"><i class="fa fa-fort-awesome" style="font-size:25px"></i>Attendence Manager</a></li>
   <li style="float:right;font-size:18px" class="zzz">
     <div class="container">
     <a><?php echo $login_sessionf," ",$login_sessionl ?> <i class="fa fa-caret-down"></i></a>
@@ -99,32 +99,35 @@ li a {
 </ul>
 
 <!--back Button-->
-<a href="welcomefaculty.php">
+<a href="welcomestudent.php">
       <button type="button" name="back" class="w3-button w3-hover-blue"><i class="fa fa-arrow-left"></i>Back</button><!-- Back Button-->
     </a>
 
 
     <table id="t01" style="margin-top:1%">
       <tr>
-        <th>Roll Number</th><th>Name</th><th>Present</th><th>Absent</th></tr>
-
+        <th>Teacher Name</th><th>Course</th><th>Attended</th><th>Total Class</th></tr>
 
     <?php
     #$rslt=mysqli_query($db,"select id,firstname,lastname,username from db_student");
 #  $query=mysqli_query($db,"select courseteaching from db_faculty where username=$user_check");
 echo "<br/>";
     #$abc=$user_check;
-    $rslt=mysqli_query($db,"select student_rollno,attendence,total_classes from db_attendence where subject_id='$course' ");
+    $teacher=mysqli_query($db,"select subject_id,attendence,total_classes from db_attendence where student_rollno='$user' ");
     #echo "select student_rollno,subject_id,attendence,total_classes from db_attendence where subject_id=$abc";
-    echo "$course";
+    #echo "$user";
     echo "<form action='' method=\"post\">";
     #$rs=mysqli_query($db,"select firstname,lastname from db_student");
-  while($row=mysqli_fetch_array($rslt,MYSQLI_ASSOC)){
-    $rs=mysqli_query($db,"select ID,firstname,lastname from db_student");
+  while($row=mysqli_fetch_array($teacher,MYSQLI_ASSOC)){
+    #$abc=$row['subject_id'];
+    $abc=$row['subject_id'];
+    #echo "$abc";
+    $rs=mysqli_query($db,"select firstname,lastname from db_faculty where courseteaching='$abc' ");
     $col=mysqli_fetch_array($rs,MYSQLI_ASSOC);
+    #echo $col['firstname'];
     echo "<tr>
-    <td>".$row['student_rollno']."</td>
     <td>".$col['firstname']." ".$col['lastname']."</td>
+    <td>".$row['subject_id']."</td>
     <td>".$row['attendence']."</td>
     <td>".$row['total_classes']."</td>
     </tr>";

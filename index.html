@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="icon" href="images/icon1.png" type="image/icon" />
 <!--<head>
   <link rel="icon" href="http://www.synowbtech.com/images/logo/logos-146a.jpg">-->
 <title>Attendance Manager</title>
@@ -14,7 +15,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 .bgimg {
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("images/14.jpg");
+    background-image: url("images/photo_bg.jpg");
     min-height: 100%;
 }
 /* Full-width input fields */
@@ -28,7 +29,6 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-
 button {
     background-color: #4caf4e;
     color: white;
@@ -58,7 +58,7 @@ button:hover {
 }
 
 img.avatar {
-    width: 70%;
+    width: 50%;
     height: 50%;
     border-radius: 50%;
 }
@@ -168,7 +168,7 @@ color: green;
     float: left;
     width: 100%;
     padding: 10px 50px;
-    height: 390px; /* Should be removed. Only for demonstration */
+    height: 100%; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -195,7 +195,7 @@ color: green;
     <a href="index.html" class="w3-bar-item w3-button w3-hover-blue">HOME</a>
     <a href="courseoffered.html" class="w3-bar-item w3-button w3-hover-red">Course Offered</a>
     <a href="about.html" class="w3-bar-item w3-button w3-hover-purple">ABOUT</a>
-    <a href="#googleMap" class="w3-bar-item w3-button w3-hover-blue">CONTACT</a>
+    <a href="contact.html" class="w3-bar-item w3-button w3-hover-blue">CONTACT</a>
 
     <div class="w3-dropdown-hover w3-hide-small">
       <a class="w3-button w3-hover-green">Sign Up</a>
@@ -209,21 +209,21 @@ color: green;
   </div>
 </div>
 <!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+<!--<header class="bgimg w3-display-container w3-grayscale-min" id="home">-->
+<header class="bgimg w3-display-container" id="home">
   <div class="w3-display-middle w3-center">
     <span class="w3-text-white w3-hide-small" style="font-size:100px">Attendance<br>Manager</span>
-    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>Attendance<br>Manager</b></span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px">Attendance<br>Manager</span>
 <br>
-  <button class="w3-button w3-black w3-xxlarge w3-hover-red" onclick="document.getElementById('id01').style.display='block'" style="width:auto" id="facultylogin">Faculty LogIn</button>
-  <button class="w3-button w3-black w3-xxlarge w3-hover-purple" onclick="document.getElementById('id02').style.display='block'" style="width:auto" id="studentlogin">Student LogIn</button>
+  <button class="w3-round-xlarge w3-black w3-xxlarge w3-hover-red" onclick="document.getElementById('id01').style.display='block'" style="width:auto" id="facultylogin">Faculty LogIn</button>
+  <button class="w3-round-xlarge w3-black w3-xxlarge w3-hover-purple" onclick="document.getElementById('id02').style.display='block'" style="width:auto" id="studentlogin">Student LogIn</button>
 </div>
 
   <div id="id01" class="modal">
-
     <form class="modal-content animate" id="modalform" method="POST" action="authenticatefaculty.php">
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none" class="close" title="Close Modal">&times;</span>
-        <img src="images/9.jpg" alt="Avatar" class="avatar">
+        <img src="images/images.jpeg" alt="Avatar" class="avatar">
       </div>
 
       <div class="container">
@@ -244,7 +244,7 @@ color: green;
     <form class="modal-content animate" id="modalform"  method="POST" action="authenticatestudent.php">
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none" class="close" title="Close Modal">&times;</span>
-        <img src="images/15.jpg" alt="Avatar" class="avatar">
+        <img src="images/images.jpeg" alt="Avatar" class="avatar">
       </div>
 
       <div class="container">
@@ -263,7 +263,6 @@ color: green;
 
   <!--SIGNUP Faculty-->
   <div id="id03" class="modal">
-
     <form class="modal-content3 animate" id="modalform"   method="post" action="signupfaculty.php">
       <div class="imgcontainer">
         <span onclick="document.getElementById('id03').style.display='none" class="close" title="Close Modal">&times;</span>
@@ -328,7 +327,18 @@ color: green;
     <option >7th</option>
     <option >8th</option>
     </select>
+    <br/>
+    <p style="font-size:16px">Subjects:-</p>
+    <input type="checkbox" name="check_list[]" value="Biology"><label>Biology</label>
+    <input type="checkbox" name="check_list[]" value="Calculas"><label>Calculas</label><br/>
+    <input type="checkbox" name="check_list[]" value="Data Analytics"><label>Data Analytics</label><br/>
+    <input type="checkbox" name="check_list[]" value="Differential Equations"><label>Differential Equations</label><br/>
+    <input type="checkbox" name="check_list[]" value="Discrete Structures"><label>Discrete Structures</label><br/>
+    <input type="checkbox" name="check_list[]" value="Fluid Mechanics"><label>Fluid Mechanics</label><br/>
+    <input type="checkbox" name="check_list[]" value="Linear Algebra"><label>Linear Algebra</label><br/>
+    <input type="checkbox" name="check_list[]" value="Solid Mechanics"><label>Solid Mechanics</label><br/>
    </div>
+
 
 </div>
     <!--<input type="text" placeholder="Semester" name="Semester" required>-->

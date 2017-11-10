@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <?php
 include('sessionfaculty.php');
 session_start();
@@ -15,9 +14,9 @@ session_start();
 body,html{height: 100%}
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 body{
-  /*background-image: url("c/images/14.jpg");*/
-  background-repeat: no-repeat;
-  background-size: cover;
+/*  background-image: url("/images/photo_bg.jpg");*/
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 ul {
     list-style-type: none;
@@ -71,7 +70,7 @@ li a {
   -ms-transform: translate(-50%, -50%);
 }
 </style>
-<body class="w3-light-grey" >
+<body class="w3-light-grey " >
 <!--navigation bar-->
   <ul>
     <li style="font-size:20px" ><a class="active" href="welcomefaculty.php"><i class="fa fa-fort-awesome" style="font-size:25px"></i>Attendence Manager</a></li>
@@ -92,7 +91,7 @@ li a {
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+    <h5><b><i class="fa fa-dashboard"  style="font-size:25px"></i> My Dashboard</b></h5>
   </header>
 <a href="takeattendence.php" style="text-decoration:none;">
   <div class="w3-row-padding w3-margin-bottom">

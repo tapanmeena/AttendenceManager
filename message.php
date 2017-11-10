@@ -1,5 +1,5 @@
 <html>
-<title>Take Attendence</title>
+<title>Messages</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,6 +12,11 @@
 include('sessionfaculty.php');
 ?>
 <style>
+body{
+  background-image: url("/images/photo_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 table{
   margin-left:20%;
   margin-right: 20%;
@@ -93,5 +98,5 @@ li a {
 
 <!--back Button-->
 <a href="welcomefaculty.php">
-      <button type="button" name="back" class="w3-button w3-hover-blue"><i class="fa fa-arrow-left"></i>Back</button><!-- Back Button-->
+      <button type="button" name="back" class="w3-button w3-brown w3-hover-blue"><i class="fa fa-arrow-left"></i>Back</button><!-- Back Button-->
     </a>
