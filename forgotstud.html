@@ -1,0 +1,53 @@
+<?php
+include 'config.php';
+?>
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+$user=$_POST['roll'];
+$newpass=$_POST['newpass'];
+mysqli_query($db,"UPDATE 160010039_student SET  password='$newpass' WHERE username='$user'");
+}
+?>
+<html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+    background-image: url("2.jpg");
+}
+h1{
+  font-family:cursive;
+}
+</style>
+
+	<body>
+
+		<h1 style="text-align:center">ATTENDANCE MANAGER</h1>
+
+		<br>
+		<br>
+    <center>
+		<div class="w3-card w3-white" style="width:300">
+				<font face="Times">
+					<center>
+              <header class="w3-container w3-light-grey">
+                <h2><font face="bookman">Forgot Password</font></h2>
+              </header>
+						<div class="w3-container"><br>
+			    		<input type="text" placeholder="Roll No." name="roll" required><br><br>
+
+			    		<input type="text" placeholder="Full Name" name="fname" required><br><br>
+
+			    		<input type="password" placeholder="new Password" name="newpass" required><br>
+              <br>
+						</div>
+            <button class="w3-button w3-block w3-dark-grey">Reset Password</button>
+					</center>
+				</font>
+		</div></center>
+	</body>
+</html>
